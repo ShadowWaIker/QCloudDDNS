@@ -75,19 +75,12 @@ func sign(method string, api string, params map[string]string, signType string) 
 }
 
 /*
- * Cloud Name Service CNS 腾讯云解析 签名
- */
-func SignCNS(params map[string]string) (response string, err error) {
-	return sign("get", "cns", params, "HmacSHA1")
-}
-
-/*
  * Cloud Name Service CNS RecordList 获取域名的解析记录
  */
 func CNSRecordList(domain, subDomain string) (map[string]interface{}, error) {
 	apiURL := "https://cns.api.qcloud.com/v2/index.php?"
 	params := map[string]string{
-		"Action": "RecordList",
+		"Action":    "RecordList",
 		"domain":    domain,
 		"subDomain": subDomain,
 	}

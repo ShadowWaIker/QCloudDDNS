@@ -1,14 +1,14 @@
 [Common]
 ; Default = False
-IPv4 = True
+IPv4 = False
 
 ; Default = False
 IPv6 = False
 
 ; Default = 120
-Round = 5
+Round = 120
 
-; Default = ""
+; Default Is Empty, Will Not Write Log. 默认为空，不进行日志记录。
 Log =
 
 ; Default = False

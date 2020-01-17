@@ -27,7 +27,6 @@ type config struct {
 
 	IPv4Domain    string
 	IPv4SubDomain string
-
 	IPv6Domain    string
 	IPv6SubDomain string
 }
