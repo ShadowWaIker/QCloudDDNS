@@ -1,0 +1,35 @@
+[Common]
+; Default = False
+IPv4 = True
+
+; Default = False
+IPv6 = False
+
+; Default = 120
+Round = 5
+
+; Default = ""
+Log =
+
+; Default = False
+Debug = False
+
+
+[QCloud]
+; required 必填项，腾讯云在云API密钥上申请的标识身份的SecretId，一个SecretId对应唯一的SecretKey, 而SecretKey会用来生成请求签名Signature。
+SecretId =
+; required 必填项
+SecretKey =
+
+[Domain]
+; IPv4 Domain IPv4 根域名
+IPv4Domain = rebeta.cn
+
+; IPv4 SubDomain For DDNS 需要进行 DDNS 解析的 IPv4 二级域名
+IPv4SubDomain = ddns
+
+; IPv6 Domain IPv6 根域名
+IPv6Domain = s1s8.com
+
+; IPv6 SubDomain For DDNS 需要进行 DDNS 解析的 IPv6 二级域名
+IPv6SubDomain = ddns
