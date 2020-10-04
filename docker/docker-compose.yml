@@ -1,0 +1,11 @@
+version: '2.0'
+services:
+  ### QCloudDDNS 开始 ###
+  QCloudDDNS:
+    image: qcloud-ddns
+    container_name: QCloudDDNS
+    restart: always
+    volumes:
+      - /shared/QCloudDDNS/QCloudDDNS.ini:/QCloudDDNS.ini:ro # 配置文件, 只读
+      - /shared/QCloudDDNS/QCloudDDNS.log:/QCloudDDNS.log # 日志
+  ### QCloudDDNS 结束 ###
