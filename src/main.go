@@ -20,13 +20,19 @@ import (
 
 func main() {
 	logger.Log(time.Unix(time.Now().Unix(), 0).String() + " -> 开始运行")
+	doUpdate() // 202010041549 在开始循环前先进行一次更新操作, 避免需要等待第一个周期结束后才能进行更新的问题
 	for range time.Tick(time.Millisecond * 1000 * time.Duration(configer.Config.Round)) {
-		if configer.Config.IPv4 {
-			handler("4")
-		}
-		if configer.Config.IPv6 {
-			handler("6")
-		}
+		doUpdate() // 202010041549 在开始循环前先进行一次更新操作, 避免需要等待第一个周期结束后才能进行更新的问题
+	}
+}
+
+// doUpdate 202010041549 在开始循环前先进行一次更新操作, 避免需要等待第一个周期结束后才能进行更新的问题
+func doUpdate() {
+	if configer.Config.IPv4 {
+		handler("4")
+	}
+	if configer.Config.IPv6 {
+		handler("6")
 	}
 }
 
